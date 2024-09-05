@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  --primary-font: "Plus Jakarta Sans", sans-serif;
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+}
+
+*,::before,::after {margin: 0; padding:0; box-sizing: border-box;}
+
+body {font-family: var(--primary-font); width: 100%; height: 100vh; background: #E3F4FC; position: relative;}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+q {quotes: none; font-size: 12px; color:#D7312A; font-weight: 600;}
+
+.container {width: 100%; max-width: 900px; background: #fff; display: flex; flex-wrap: wrap; justify-content: center; border-radius: 20px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%)}
+.mortgage_amount_con {position: relative; }
+
+.results_con {background: #133040; width: 50%; padding: 30px; color: #fff; position: relative; border-top-right-radius: 20px; border-bottom-right-radius: 30px; border-bottom-left-radius: 70px;}
+.result_here {text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; padding: 0 20px; display: block;}
+.result_here h2 {font-size: 20px; margin-bottom: 20px;}
+.result_here p {font-size: 14px; color: var(--Slate-500); font-weight: 600; }
+.your_results > p{color: var(--Slate-300); font-size: 14px; font-weight: 600; margin: 15px 0 25px; line-height: 23px;}
+.payments_con {background: #0E2431; padding: 30px; border-radius: 10px; border-top: 5px solid #CED869;}
+.payment_result {border-bottom: 2px solid #2E4451;}
+.payment_result p {color: var(--Slate-300); font-weight: 600; font-size: 14px;}
+.payment_result h3 {color: #D4DC22; font-size: 50px; margin: 10px 0 20px;}
+
+.total_con {margin-top: 40px;}
+.total_con h4 {font-size: 20px;}
+.total_con p {font-size: 14px; color: var(--Slate-300); margin-bottom: 10px;}
+
+.calculator_con {padding: 30px; width: 50%; border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+
+.calculator_header {display: flex; justify-content: space-between; margin-bottom: 50px}
+.calculator_header h2 {color: #0A202E}
+.calculator_header button {border: none; background: transparent; text-decoration: underline; font-size: 14px; font-family: var(--primary-font); color: #6F7883; cursor: pointer;}
+
+.calculator_form_con {}
+.calculator_form_con input{line-height:40px; border-radius: 5px; border: 1.5px solid #8B9A9E; margin: 5px 0; color: #122732; font-size: 16px; font-weight: 600; font-family:var(--primary-font)}
+.term_interest_con label, .mortgage_amount_con label {display: block; }
+.term_interest_con input, .mortgage_amount_con input {width: 100%; }
+.calculator_form_con label {font-size: 14px; color: var(--Slate-500); font-weight: 600;}
+.euro_icon {position: absolute; left: 1px; line-height: 40px; background: #E1F4FD; padding: 0 15px; text-align: center; top: 24px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; font-weight: 600; color: #6E8590}
+#mortgage_amount {padding-left: 50px;}
+
+.term_interest_con {display: flex; gap: 15px; margin: 20px 0;}
+.term_interest_con input {padding-left: 10px;}
+.term_con {position: relative;}
+.term_con span {position: absolute; top: 24px; right: 1px; background: #E1F4FD; line-height: 40px; padding: 0 15px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; font-family: var(--primary-font); font-weight: 600; color:#6E8590}
+.rate_con {position: relative;}
+.rate_con span {position: absolute; top: 24px; right: 1px; background: #E1F4FD; line-height: 40px; padding: 0 15px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; font-family: var(--primary-font); font-weight: 600; color:#6E8590}
+
+.type_con .repayment, .type_con .interest_only {border: 1.5px solid #8B9A9E; padding: 10px 15px; border-radius: 5px; margin: 10px 0; position: relative;}
+.type_con .repayment input, .type_con .interest_only input {position: relative; z-index: 999;}
+.type_con .repayment label, .type_con .interest_only label {margin-left: 10px; font-family: var(--primary-font); font-weight: 600; font-size: 16px; color: #122732; position: relative; z-index: 999;}
+.calculate_btn {background: #D9DB30; border: none; border-radius: 30px; padding: 15px 50px 15px 70px; font-family: var(--primary-font); font-weight: 600; font-size: 16px; color: #0E2B06; margin-top: 25px; position: relative; cursor:pointer}
+.calculate_btn::before {content: url(/public/images/icon-calculator.svg);position: absolute; left: 35px; top: 50%; transform: translateY(-50%);}
+
+.input_active {position: absolute; inset: 0; background: #D3D430; opacity: 0.5; display: none;}
+.type_con input[type="radio"]:checked + .input_active {display: block;}
+
+@media screen and (max-width: 900px) {
+  body {margin-bottom: 100px;}
+  .container {max-width: 600px; margin: 50px 0;}
+  .calculator_con, .results_con {width: 100%;}
+  .results_con {border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;}
+  .result_here {position: relative;}
+}
+
+@media screen and (max-width: 900px) {
+  body {margin: 30px 0 50px;}
+
+}
